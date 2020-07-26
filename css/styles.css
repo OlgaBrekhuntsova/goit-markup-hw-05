@@ -105,7 +105,7 @@ img {
   position: relative;
 }
 
-.nav-list-item .chosen::after {
+.nav-list-item .current::after {
   display: block;
   content: "";
   width: 100%;
@@ -117,7 +117,7 @@ img {
 }
 .nav-list-link:hover,
 .nav-list-link:focus,
-.chosen {
+.current {
   color: var(--accent-color);
 }
 .header-adress-list {
@@ -694,7 +694,7 @@ position: relative;
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(+101%);
+  transform: translateY(calc(+100% + 1px));
 }
 .portfolio-projects-list-link:hover .projects-name-description,
 .portfolio-projects-list-link:focus .projects-name-description{
