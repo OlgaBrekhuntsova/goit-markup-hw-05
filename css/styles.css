@@ -7,7 +7,15 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
+/**:hover,
+*:focus,*/
+*:hover .animated,
+*:focus .animated
+ {
+  transition-property: color, fill, background, background-color, border, box-shadow, transform;
+  transition-duration: 5500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 :root {
   --main-font: "Roboto", sans-serif;
   --secondary-font: "Raleway", sans-serif;
@@ -695,8 +703,11 @@ position: relative;
   top: 0;
   left: 0;
   transform: translateY(calc(+100% + 1px));
+ /* transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 .portfolio-projects-list-link:hover .projects-name-description,
 .portfolio-projects-list-link:focus .projects-name-description{
   transform: translateY(0);
-}
+  }
