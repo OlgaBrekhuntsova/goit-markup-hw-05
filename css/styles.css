@@ -7,15 +7,14 @@ html {
 *::after {
   box-sizing: inherit;
 }
-/**:hover,
-*:focus,*/
-*:hover .animated,
+
+/* *:hover .animated,
 *:focus .animated
  {
   transition-property: color, fill, background, background-color, border, box-shadow, transform;
   transition-duration: 5500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
+  } */
 :root {
   --main-font: "Roboto", sans-serif;
   --secondary-font: "Raleway", sans-serif;
@@ -28,6 +27,8 @@ html {
   --rectangle-background-color: #f5f4fa;
   --svg-color: #afb1b8;
   --svg-color-accent: #2196f3;
+  --transition-time: 250ms;
+  --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   background-color: var(--title-dark-theme-color);
@@ -103,6 +104,7 @@ img {
 }
 
 .nav-list-link {
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -110,18 +112,21 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-light-theme-color);
-  position: relative;
+    transition-property: color;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 
 .nav-list-item .current::after {
+  position: absolute;
+  bottom: 0;
   display: block;
   content: "";
   width: 100%;
   height: 4px;
  background: var(--accent-color);
   border-radius: 2px;
-  position: absolute;
-  bottom: 0;
+  
 }
 .nav-list-link:hover,
 .nav-list-link:focus,
@@ -145,6 +150,10 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--text-light-theme-color);
+  transition-property: color;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
+
 }
 .header-adress-list-item-link:hover,
 .header-adress-list-item-link:focus {
@@ -153,6 +162,9 @@ img {
 .header-adress-icon {
   margin-right: 10px;
   fill: var(--text-light-theme-color);
+  transition-property: fill;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
 } 
 .header-adress-list-item-link .mail {
   width: 16px;
@@ -217,10 +229,13 @@ img {
   letter-spacing: 0.06em;
   color: var(--title-dark-theme-color);
   background-color: var(--accent-color);
+  transition-property: background;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
 }
 
 .hero .modal-btn:hover {
-background: #188CE8;
+background:#188CE8;
 }
 
 /*FEATURES SECTION*/
@@ -258,10 +273,6 @@ background: #188CE8;
   width: 70px;
   height: 70px;
   fill: var(--title-light-theme-color);
-  /*margin-top: auto;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-left: auto;*/
 }
 .features-list-item:not(:last-child) {
   margin-right: 30px;
@@ -289,6 +300,9 @@ background: #188CE8;
   color: var(--title-light-theme-color);
 }
 .specialization .subtitle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding-top: 28px;
   padding-bottom: 28px;
   font-weight: 700;
@@ -301,9 +315,9 @@ background: #188CE8;
   margin-top: 0px;
   color: var(--title-dark-theme-color);
   background-color: var(--background-dark-theme-color);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+   transition-property: background-color;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 
 .specialization-list {
@@ -316,6 +330,7 @@ background: #188CE8;
 }
 .specialization-list-item-link {
 position: relative;
+
 }
 .specialization-list-item-link:hover .subtitle,
 .specialization-list-item-link:focus .subtitle {
@@ -384,6 +399,9 @@ position: relative;
   background-color: none;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 .team-list-item-social-list-link:hover .social-list-link-block,
 .team-list-item-social-list-link:focus .social-list-link-block {
@@ -398,6 +416,9 @@ position: relative;
   width: 20px;
   height: 20px;
   fill: var(--svg-color);
+  transition-property: fill;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
   }
 
 /*CUSTOMERS SECTION*/
@@ -415,12 +436,15 @@ position: relative;
 }
 .customers-list-item-link-block {
   display: flex;
-  /*justify-content: center;
-  align-items: center;*/
+  justify-content: center;
+  align-items: center;
   width: 170px;
   height: 90px;
   border: 1px solid var(--svg-color);
   border-radius: 4px;
+  transition-property: border;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 
 .customers-list-item-link-block:hover,
@@ -433,10 +457,9 @@ position: relative;
 }
 .customers-list-item-link-block-icon {
   fill: var(--svg-color);
- margin-top: auto;
- margin-right: auto;
- margin-bottom: auto;
- margin-left: auto;
+ transition-property: fill;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 
 .customers-list-item-link-block .logo-1 {
@@ -507,10 +530,14 @@ position: relative;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--text-dark-theme-color);
+  transition-property: color;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 .footer .footer-contact-adress-list-item-link.map {
   color: var(--title-dark-theme-color);
-}
+ }
+
 .footer-contact-adress-list-item-link:hover,
 .footer .footer-contact-adress-list-item-link.map:hover,
 .footer-contact-adress-list-item-link:focus,
@@ -535,6 +562,9 @@ position: relative;
   width: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+transition-duration: var(--transition-time);
+transition-timing-function: var(--transition-function);
 }
 .footer-social-list-item-link:hover .footer-social-list-item-link-block,
 .footer-social-list-item-link:focus .footer-social-list-item-link-block {
@@ -570,15 +600,7 @@ position: relative;
   fill: var(--title-dark-theme-color);
   margin-left: 10px;
 }
-/*.footer-sign .modal-btn::after {
-  content: "";
-  display: block;
-  background-repeat: no-repeat;
-  background-image: url(../images/footer-icons/icon-send.svg);
-  width: 24px;
-  height: 24px;
-  margin-left: 10px;
-}*/
+
 /*PORTFOLIO*/
 .portfolio-header {
   border-bottom: 1px solid #ececec;
@@ -614,6 +636,9 @@ position: relative;
   letter-spacing: 0.03em;
   color: var(--title-light-theme-color);
   background-color: var(--rectangle-background-color);
+  transition-property: background-color box-shadow color;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
 }
 .portfolio-modal-btn:hover,
 .portfolio-modal-btn:focus {
@@ -633,12 +658,15 @@ position: relative;
 .portfolio-projects-list-link {
   box-sizing: border-box;
   background: var(--title-dark-theme-color);
+  transition-property: box-shadow;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
 }
 .portfolio-projects-list-link:hover,
 .portfolio-projects-list-link:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
-    outline: none;
+    /* outline: none; вообще не помню зачем это)))*/
 }
 .portfolio-projects-list-item:not(:nth-child(3n)) {
   margin-right: 2.565%;
@@ -686,6 +714,9 @@ position: relative;
 }
 
 .projects-name-description {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -699,13 +730,10 @@ position: relative;
   letter-spacing: 0.03em;
   color: var(--title-dark-theme-color);
   background-color: rgba(33, 150, 243, 0.9);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(calc(+100% + 1px));
- /* transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
+    transform: translateY(calc(+100% + 1px));
+ transition-property: transform;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-function);
 }
 .portfolio-projects-list-link:hover .projects-name-description,
 .portfolio-projects-list-link:focus .projects-name-description{
